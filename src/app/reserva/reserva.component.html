@@ -1,0 +1,40 @@
+<br>
+
+<form action="">
+    <div>
+        <select name="" #idCine id="">
+            <option value="">Seleccione...</option>
+            @for (item of cines; track $index) {
+                <option value="{{item.id}}">{{item.nombreCine}}</option>
+            }
+        </select>
+    </div>
+
+    <div>
+        <button type="button" (click)="getHabitacionesCine(idCine)">Buscar</button>
+    </div>
+
+    <div>
+        <select name="" #habitacionID id="">
+            <option value="">Seleccione...</option>
+            @for (item of habitaciones; track $index) {
+                <option value="{{item.id}}">{{item.numHabitacion}}</option>
+            }
+        </select>
+    </div>
+    <div>
+        <button type="button" (click)="getAsientos(habitacionID)">Buscar Asientos Disponibles</button>
+    </div>
+
+<div>
+    Asientos disponibles : {{asientosDisponibles}}
+</div>
+    <div>
+        <input type="text" #reservaAsiento name="reservaAsiento" placeholder="Numero de asiento a reservar">
+    </div>
+ 
+    <div>
+       <button type="button" (click)="reserva(habitacionID,reservaAsiento)" >Agregar Cine</button>
+    </div>
+</form>
+

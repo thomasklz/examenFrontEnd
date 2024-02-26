@@ -1,0 +1,27 @@
+<br>
+
+<form action="">
+    <div>
+        <select name="" #idCine id="">
+            <option value="">Seleccione...</option>
+
+            @for (item of cines; track $index) {
+                <option value="{{item.id}}">{{item.nombreCine}}</option>
+
+            }
+          
+        </select>
+    </div>
+    <div>
+        <input type="text" #pelicula name="pelicula" placeholder="Nombre pelicula">
+    </div>
+    <div>
+        <input type="text" #numH name="numH" placeholder="Numero de habitacion">
+    </div>
+    <div>
+        <input type="text" #numA name="numA" placeholder="Numero de asientos">
+    </div>
+    <div>
+       <button type="button" (click)="store(idCine,numH,numA,pelicula)" >Agregar Cine</button>
+    </div>
+</form>
